@@ -10,6 +10,7 @@ var (
 )
 
 func main() {
+	http.HandleFunc("/ps", psServer)
 	http.HandleFunc("/uptime", uptimeServer)
 	err := http.ListenAndServe("0.0.0.0:9000", nil)
 	if err != nil {
